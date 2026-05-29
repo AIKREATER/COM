@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+  <!-- SEO & Performance -->
+  <title>𝙱𝙰𝙽𝙳𝙸 𝚅𝙴𝙽𝙺𝙰𝚃𝙴𝚂𝚄| Strategic Digital Marketing Portfolio</title>
+  <meta name="description" content="𝙱𝙰𝙽𝙳𝙸 𝚅𝙴𝙽𝙺𝙰𝚃𝙴𝚂𝚄 - Digital Marketing Strategist. Specializing in SEO, Google Ads, SMM & Healthcare Marketing. Let's elevate your brand.">
+  <meta name="keywords" content="Digital Marketing, SEO Expert, Google Ads, Social Media Marketing, Bandi Venkatesu, Portfolio">
+  <meta name="author" content="Bandi Venkatesu">
+  <meta name="robots" content="index, follow">
+
+  <!-- Premium Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome (clean icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    /* ========== GLOBAL RESET & VARIABLES - BIG COMPANY AESTHETIC ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0c0f12;
+      --bg-secondary: #11151a;
+      --surface: #1a1f26;
+      --surface-elevated: #222831;
+      --border-dim: #2a313c;
+      --gold-accent: #f5b042;
+      --gold-glow: rgba(245, 176, 66, 0.2);
+      --text-primary: #ffffff;
+      --text-secondary: #b9c1cc;
+      --text-muted: #6c7a8e;
+      --success-green: #2dd4bf;
+      --card-radius: 28px;
+      --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-accent); border-radius: 10px; }
+
+    /* ========== NAVIGATION - GLASS + STICKY ========== */
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 5%;
+      right: 5%;
+      width: 90%;
+      z-index: 1000;
+      background: rgba(12, 15, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 176, 66, 0.18);
+      border-radius: 80px;
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff 30%, var(--gold-accent) 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 42px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.02em;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold-accent);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gold-accent);
+      border-radius: 3px;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 85px;
+      left: 5%;
+      right: 5%;
+      background: rgba(17, 21, 26, 0.98);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      border: 1px solid var(--border-dim);
+      z-index: 999;
+      flex-direction: column;
+      padding: 28px 24px;
+      gap: 22px;
+    }
+
+    .mobile-nav a {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Sections Layout (multi-page) */
+    section {
+      display: none;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Universal Containers */
+    .page-header {
+      padding: 140px 5% 60px 5%;
+      background: radial-gradient(ellipse at 30% 20%, rgba(245,176,66,0.05) 0%, rgba(12,15,18,0) 70%);
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .badge-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 176, 66, 0.12);
+      border: 1px solid rgba(245, 176, 66, 0.25);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--gold-accent);
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 80px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #fff, #d4d9e6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h1 em {
+      background: linear-gradient(135deg, var(--gold-accent), #ffcd7e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-style: normal;
+    }
+
+    /* Headings style for H2 (page titles after conversion) */
+    h2 {
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff, #e0e5f0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.25em;
+    }
+    h2 em {
+      background: linear-gradient(135deg, var(--gold-accent), #ffcd7e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-style: normal;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-top: 20px;
+    }
+
+    /* Cards & Grid */
+    .skills-grid, .contact-grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      margin: 48px 0 60px;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 30px 28px;
+      border: 1px solid var(--border-dim);
+      transition: var(--transition);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold-accent);
+      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.4);
+    }
+
+    .skill-icon {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      color: var(--gold-accent);
+    }
+
+    .skill-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .skill-tags span {
+      background: var(--bg-secondary);
+      border-radius: 40px;
+      padding: 5px 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border: 0.5px solid var(--border-dim);
+    }
+
+    /* Timeline Education - NEW white and bold style */
+    .timeline {
+      margin: 48px 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .edu-card {
+      background: var(--surface);
+      border-radius: 28px;
+      padding: 30px 36px;
+      border-left: 5px solid var(--gold-accent);
+      transition: var(--transition);
+    }
+
+    .edu-year {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold-accent);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .edu-badge {
+      background: var(--gold-accent);
+      color: #0c0f12;
+      font-weight: 800;
+      font-size: 0.7rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .score-badge {
+      display: inline-flex;
+      gap: 10px;
+      background: var(--bg-secondary);
+      border-radius: 30px;
+      padding: 8px 18px;
+      margin: 16px 0 10px;
+      font-weight: 600;
+    }
+
+    /* Enhanced white & bold text for education details */
+    .edu-card h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .edu-card p, .edu-card .score-badge, .edu-card .edu-detail-text {
+      color: #ffffff !important;
+      font-weight: 500;
+      opacity: 0.92;
+    }
+
+    .edu-card .text-secondary-light {
+      color: #f0f0f0;
+      font-weight: 500;
+    }
+
+    .declaration {
+      background: rgba(245,176,66,0.05);
+      border-radius: 24px;
+      padding: 28px 36px;
+      border: 1px solid rgba(245,176,66,0.2);
+      margin-top: 40px;
+      color: white;
+      font-weight: 500;
+    }
+
+    /* Contact Form & Info */
+    .contact-grid {
+      grid-template-columns: 1fr 1.2fr;
+      margin: 48px 0 60px;
+    }
+
+    .contact-info-panel {
+      background: var(--surface);
+      border-radius: 32px;
+      padding: 36px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--bg-secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--gold-accent);
+    }
+
+    .contact-detail .label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .contact-detail .value {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    .form-card {
+      background: var(--surface-elevated);
+      border-radius: 32px;
+      padding: 36px;
+    }
+
+    .fg {
+      margin-bottom: 24px;
+    }
+
+    .fg label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .fg input, .fg textarea {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-dim);
+      border-radius: 20px;
+      padding: 14px 18px;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      transition: 0.2s;
+    }
+
+    .fg input:focus, .fg textarea:focus {
+      outline: none;
+      border-color: var(--gold-accent);
+    }
+
+    .btn-gold {
+      background: var(--gold-accent);
+      border: none;
+      width: 100%;
+      padding: 14px;
+      font-weight: 800;
+      border-radius: 40px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #0c0f12;
+    }
+
+    .btn-gold:hover {
+      background: #ffc857;
+      transform: translateY(-2px);
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 48px;
+      margin: 36px 0;
+    }
+
+    .stat h3 {
+      font-size: 2.2rem;
+      color: var(--gold-accent);
+    }
+
+    footer {
+      margin-top: 80px;
+      padding: 32px 5%;
+      border-top: 1px solid var(--border-dim);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      margin-left: 24px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      nav { width: 92%; left: 4%; right: 4%; padding: 10px 24px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .stats-row { flex-direction: column; gap: 24px; }
+      footer { flex-direction: column; align-items: center; text-align: center; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Extra bold helpers */
+    .bold-white {
+      color: white !important;
+      font-weight: 700 !important;
+    }
+    .edu-card p strong, .edu-card .score-badge strong {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Global Navigation -->
+<nav>
+  <div class="logo">𝙱𝙰𝙽𝙳𝙸 𝚅𝙴𝙽𝙺𝙰𝚃𝙴𝚂𝚄<span style="color: #f5b042;">.</span></div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" class="active" id="nav-home">HOME</a></li>
+    <li><a onclick="showPage('skills')" id="nav-skills">SKILLS</a></li>
+    <li><a onclick="showPage('education')" id="nav-education">EDUCATION</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">CONTACT</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a onclick="showPage('home'); closeMenu()"><i class="fas fa-home"></i> Home</a>
+  <a onclick="showPage('skills'); closeMenu()"><i class="fas fa-code-branch"></i> Skills</a>
+  <a onclick="showPage('education'); closeMenu()"><i class="fas fa-graduation-cap"></i> Education</a>
+  <a onclick="showPage('contact'); closeMenu()"><i class="fas fa-envelope"></i> Contact</a>
+</div>
+
+<!-- **************************** HOME PAGE **************************** -->
+<section id="home" class="active">
+  <div class="page-header">
+    <div class="container">
+      <div class="badge-gold"><i class="fas fa-chart-line"></i> DIGITAL MARKETING STRATEGIST</div>
+      <h1>𝙱𝙰𝙽𝙳𝙸 <em> 𝚅𝙴𝙽𝙺𝙰𝚃𝙴𝚂𝚄</em></h1>
+      <h1 style="font-size: clamp(36px,5vw,58px); margin-top: 8px;"></h1>
+      <!-- Removed 5+ years experience line, replaced with updated specialization -->
+      <div class="hero-sub">SEO, Google Ads & Social Media specialist delivering scalable ROI for global brands.</div>
+      <div class="stats-row">
+        <!-- updated 35%+ to 48%+ as requested -->
+        <div class="stat"><h3>48%+</h3><span>Avg. Follower Growth</span></div>
+        <div class="stat"><h3>1.6M+</h3><span>Monthly Impressions</span></div>
+        <div class="stat"><h3>86%</h3><span>Client Retention</span></div>
+      </div>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <button class="btn-gold" onclick="showPage('contact')" style="width: auto; padding: 12px 32px;"><i class="fas fa-paper-plane"></i> Start a project</button>
+        <button onclick="showPage('skills')" style="background: transparent; border: 1px solid var(--gold-accent); color: var(--gold-accent); padding: 12px 32px; border-radius: 40px; font-weight: 700; cursor: pointer;">Explore expertise →</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div style="background: var(--surface); border-radius: 28px; padding: 48px; margin-top: 20px; margin-bottom: 40px;">
+      <p style="font-size: 1.2rem; line-height: 1.6;">🏆 <strong>Premium digital partner</strong> — Specialized in <strong>healthcare content marketing, SEO automation, and high-ROI Google Ads campaigns</strong>. I craft omnichannel strategies that amplify authority & revenue.</p>
+    </div>
+  </div>
+  <footer>
+    <div>© 2026 Bandi Venkatesu — Strategic Digital Marketing</div>
+    <div class="footer-links">
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('skills')">Skills</a>
+      <a onclick="showPage('education')">Education</a>
+      <a onclick="showPage('contact')">Contact</a>
+    </div>
+  </footer>
+</section>
+
+<!-- **************************** SKILLS PAGE **************************** -->
+<section id="skills">
+  <div class="page-header">
+    <div class="container">
+      <div class="badge-gold"><i class="fas fa-cog"></i> CORE COMPETENCIES</div>
+      <!-- Converted H1 to H2 as per request: Technical & Marketing Arsenal -->
+      <h2>Technical & <em>Marketing Skills</em></h2>
+      <div class="hero-sub">Modern stack to dominate search engines & social platforms.</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="skills-grid">
+      <div class="skill-card reveal"><div class="skill-icon"><i class="fas fa-chart-simple"></i></div><h3>Search Engine Optimization</h3><div class="skill-tags"><span><i class="fas fa-search"></i> SEO Audits</span><span><i class="fas fa-microchip"></i> Technical SEO</span><span>On-Page/Off-Page</span><span>Core Web Vitals</span><span>Link Building</span><span>Local SEO</span></div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><i class="fas fa-bullhorn"></i></div><h3>Paid Media & PPC</h3><div class="skill-tags"><span>Google Ads</span><span>Meta Ads Manager</span><span>Retargeting</span><span>ROI Analysis</span><span>Keyword Planner</span><span>Search Ads 360</span></div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><i class="fab fa-instagram"></i></div><h3>Social Media Strategy</h3><div class="skill-tags"><span>Content Calendars</span><span>Engagement Growth</span><span>LinkedIn Outreach</span><span>Influencer Collabs</span><span>Social Listening</span></div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><i class="fas fa-pen-fancy"></i></div><h3>Content & Design</h3><div class="skill-tags"><span>Healthcare Copywriting</span><span>Canva Pro</span><span>WordPress</span><span>Email Automation</span><span>SEO Blogging</span></div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><i class="fas fa-chart-line"></i></div><h3>Analytics & AI Tools</h3><div class="skill-tags"><span>Google Analytics 4</span><span>SEMrush</span><span>Ahrefs</span><span>AI Content Tools</span><span>Data Studio</span></div></div>
+      <div class="skill-card reveal"><div class="skill-icon"><i class="fas fa-globe"></i></div><h3>Languages</h3><div class="skill-tags"><span>English (Medium / Professional)</span><span>Telugu (Native)</span></div></div>
+    </div>
+  </div>
+  <footer>
+    <div>© 2026 —𝙱𝙰𝙽𝙳𝙸 𝚅𝙴𝙽𝙺𝙰𝚃𝙴𝚂𝚄</div>
+    <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('skills')">Skills</a><a onclick="showPage('education')">Education</a><a onclick="showPage('contact')">Contact</a></div>
+  </footer>
+</section>
+
+<!-- **************************** EDUCATION PAGE **************************** -->
+<section id="education">
+  <div class="page-header">
+    <div class="container">
+      <div class="badge-gold"><i class="fas fa-university"></i> ACADEMIC JOURNEY</div>
+      <!-- Converted H1 to H2 (white/bold style) -->
+      <h2>Education & <em>Credentials</em></h2>
+      <div class="hero-sub">Strong analytical foundation with a focus on emerging marketing technologies.</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="timeline">
+      <!-- Bachelor's Degree -->
+      <div class="edu-card reveal"><div class="edu-year">2024</div><div class="edu-badge"><i class="fas fa-graduation-cap"></i> Bachelor's Degree</div><h3>B.Sc. Computer Science</h3><p>Y.V. University, Kadapa | CGPA: 7.0/10</p><div class="score-badge"><i class="fas fa-chart-pie"></i> Specialization: BSE(MSCS)Mathematics, Statistics, and Computer Science. </div><p style="margin-top: 12px; font-weight: 500; color: #ffffff;"></p></div>
+      <!-- Intermediate -->
+      <div class="edu-card reveal"><div class="edu-year">2021</div><div class="edu-badge"><i class="fas fa-chalkboard"></i> Intermediate</div><h3>MPC (Maths, Physics, Chemistry)</h3><p>Board of Intermediate Education, AP | Score: 473/600</p><p style="color: #ffffff; font-weight: 500; margin-top: 8px;"></p></div>
+      <!-- Secondary Education -->
+      <div class="edu-card reveal"><div class="edu-year">2019</div><div class="edu-badge"><i class="fas fa-school"></i> Secondary Education</div><h3>SSC (10th Standard)</h3><p>Board of Secondary Education, AP | CGPA: 8.5/10</p></div>
+    </div>
+    <div class="declaration reveal"><i class="fas fa-check-circle" style="color: var(--gold-accent); margin-right: 12px;"></i><strong>Declaration:</strong> I hereby affirm that all the information regarding my education and background is authentic and true to the best of my knowledge.<br><span style="display: inline-block; margin-top: 16px;">— Bandi Venkatesu</span></div>
+  </div>
+  <footer>
+    <div>Bandi Venkatesu — Academic Excellence</div>
+    <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('skills')">Skills</a><a onclick="showPage('education')">Education</a><a onclick="showPage('contact')">Contact</a></div>
+  </footer>
+</section>
+
+<!-- **************************** CONTACT PAGE **************************** -->
+<section id="contact">
+  <div class="page-header">
+    <div class="container">
+      <div class="badge-gold"><i class="fas fa-comments"></i> LET'S CONNECT</div>
+      <h1>Start a <em>conversation</em></h1>
+      <div class="hero-sub">Ready to elevate your brand? Let's collaborate on your next digital breakthrough.</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info-panel reveal">
+        <div class="contact-item"><div class="contact-icon"><i class="fas fa-phone-alt"></i></div><div class="contact-detail"><div class="label">PHONE</div><div class="value"><a href="tel:+917288970502" style="color: inherit; text-decoration: none;">+91 72889 70502</a></div></div></div>
+        <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div class="contact-detail"><div class="label">EMAIL</div><div class="value"><a href="mailto:bandivenaktesu7@gmail.com" style="color: inherit;">bandivenaktesu7@gmail.com</a></div></div></div>
+        <div class="contact-item"><div class="contact-icon"><i class="fab fa-linkedin-in"></i></div><div class="contact-detail"><div class="label">LINKEDIN</div><div class="value">linkedin.com/in/bandivenkatesu</div></div></div>
+        <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-detail"><div class="label">LOCATION</div><div class="value">Kadapa, Andhra Pradesh, India</div></div></div>
+        <div style="margin-top: 32px; background: rgba(45,212,191,0.1); border-radius: 24px; padding: 16px 20px;"><i class="fas fa-clock"></i> <strong>Available for:</strong> Full-time, Freelance, Remote collaborations</div>
+      </div>
+      <div class="form-card reveal"><h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">Send Inquiry</h3><div class="fg"><label>Full Name</label><input type="text" id="fullName" placeholder="John Carter"></div><div class="fg"><label>Email address</label><input type="email" id="emailId" placeholder="hello@domain.com"></div><div class="fg"><label>Subject</label><input type="text" id="subjLine" placeholder="SEO Consultation / Job Opportunity"></div><div class="fg"><label>Message</label><textarea rows="4" id="msgBody" placeholder="Tell me about your project..."></textarea></div><button class="btn-gold" onclick="handleContact()"><i class="fas fa-paper-plane"></i> Send message</button><p style="font-size: 0.7rem; margin-top: 16px; text-align: center; color: var(--text-muted);">All messages are answered within 24h.</p></div>
+    </div>
+  </div>
+  <footer>
+    <div>© 𝙱𝙰𝙽𝙳𝙸 𝚅𝙴𝙽𝙺𝙰𝚃𝙴𝚂𝚄 — Global Digital Marketing</div>
+    <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('skills')">Skills</a><a onclick="showPage('education')">Education</a><a onclick="showPage('contact')">Contact</a></div>
+  </footer>
+</section>
+
+<script>
+  // Multi-page navigation with active classes
+  function showPage(pageId) {
+    document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+    const activeLink = document.getElementById('nav-' + pageId);
+    if (activeLink) activeLink.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // re-trigger reveal animations on new active page
+    setTimeout(() => {
+      const activeSection = document.getElementById(pageId);
+      const reveals = activeSection.querySelectorAll('.reveal');
+      reveals.forEach((el, idx) => {
+        setTimeout(() => el.classList.add('visible'), idx * 80);
+      });
+    }, 150);
+  }
+
+  function toggleMenu() {
+    const mobile = document.getElementById('mobileNav');
+    mobile.classList.toggle('open');
+    mobile.style.display = mobile.classList.contains('open') ? 'flex' : 'none';
+  }
+
+  function closeMenu() {
+    const mobile = document.getElementById('mobileNav');
+    mobile.classList.remove('open');
+    mobile.style.display = 'none';
+  }
+
+  // Contact form handler with mailto simulation
+  function handleContact() {
+    const name = document.getElementById('fullName')?.value.trim();
+    const email = document.getElementById('emailId')?.value.trim();
+    const subject = document.getElementById('subjLine')?.value.trim();
+    const message = document.getElementById('msgBody')?.value.trim();
+    if (!name || !email || !subject || !message) {
+      alert('Please fill all the fields before sending.');
+      return;
+    }
+    const body = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+    window.location.href = `mailto:bandivenaktesu7@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    alert('Your email client will open. Thank you for reaching out!');
+  }
+
+  // Intersection Observer for scroll reveals across pages
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Initial reveals on home page
+  window.addEventListener('load', () => {
+    document.querySelectorAll('#home .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 80));
+    // ensure mobile nav hidden at start
+    document.getElementById('mobileNav').style.display = 'none';
+  });
+</script>
+</body>
+</html>
+```
